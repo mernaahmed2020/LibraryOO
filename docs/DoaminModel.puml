@@ -1,0 +1,53 @@
+@startuml
+entity User {
+    * userId
+    * name
+    * email
+    * password
+    * phone
+    * address
+}
+
+entity Book {
+    * bookId
+    * title
+    * author
+    * genreId
+    * isAvailable
+    * publishYear
+}
+
+entity BorrowRecord {
+    * recordId
+    * borrowDate
+    * dueDate
+    * returnDate
+    * fineAmount
+}
+
+entity Librarian {
+    * librarianId
+    * name
+    * email
+    * phone
+}
+
+entity Genre {
+    * genreId
+    * genreName
+}
+
+
+
+User "1" --> "many" BorrowRecord : creates
+BorrowRecord "1" --> "1" Book : references
+Librarian "1" --> "many" BorrowRecord : manages
+
+
+
+
+
+Book "1" --> "1" Genre : belongs to
+
+
+@enduml
