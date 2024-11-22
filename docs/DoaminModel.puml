@@ -1,53 +1,58 @@
 @startuml
-entity User {
-    * userId
-    * name
-    * email
-    * password
-    * phone
-    * address
+' Define classes with detailed attributes
+class User {
+    +userId
+    +name
+    +email
+    +password
+    +registrationDate
+    +borrowingHistory
 }
 
-entity Book {
-    * bookId
-    * title
-    * author
-    * genreId
-    * isAvailable
-    * publishYear
+class Administrator {
+    +adminId
+    +name
+    +email
+    +password
+    +role
 }
 
-entity BorrowRecord {
-    * recordId
-    * borrowDate
-    * dueDate
-    * returnDate
-    * fineAmount
+class Book {
+    +bookId
+    +title
+    +author
+    +genre
+    +ISBN
+    +availabilityStatus
+    +currentBorrower
 }
 
-entity Librarian {
-    * librarianId
-    * name
-    * email
-    * phone
+class BorrowingTransaction {
+    +transactionId
+    +borrowDate
+    +returnDate
+    +dueDate
+    +isReturned
+    +lateFee
 }
 
-entity Genre {
-    * genreId
-    * genreName
+class LibraryAnnouncements {
+    +announcementId
+    +title
+    +content
+    +datePosted
 }
 
+' Define relationships with cardinality and role names
+User "1" -- "0..*" BorrowingTransaction : borrows
+BorrowingTransaction "1" -- "1" Book : involves
+Book "1" -- "1" BorrowingTransaction : currentTransaction
+User "1" -- "0..*" Book : searches/browses
+User "1" -- "0..*" LibraryAnnouncements : views
 
-
-User "1" --> "many" BorrowRecord : creates
-BorrowRecord "1" --> "1" Book : references
-Librarian "1" --> "many" BorrowRecord : manages
-
-
-
-
-
-Book "1" --> "1" Genre : belongs to
-
+' Administrator relationships
+Administrator "1" -- "0..*" LibraryAnnouncements : manages
+Administrator "1" -- "0..*" Book : adds/removes/updates
+Administrator "1" -- "0..*" BorrowingTransaction : oversees
 
 @enduml
