@@ -1,0 +1,16 @@
+@startuml
+:Admin: as Admin
+:User: as User
+:System: as System
+
+(Library Announcements) as (UC7)
+
+Admin --> (UC7) : "Post an announcement"
+(UC7) --> System : "Save announcement"
+System --> User : "Display announcement"
+
+note right of (UC7)
+This use case allows the admin to post announcements for all users.
+end note
+
+@enduml

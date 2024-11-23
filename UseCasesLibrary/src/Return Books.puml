@@ -1,0 +1,19 @@
+@startuml
+
+:User: as User
+:System: as System
+:Database: as Database
+
+(Return Books) as (UC5)
+
+User --> (UC5) : "Return borrowed books"
+(UC5) --> System : "Process return"
+System --> Database : "Update book status"
+Database --> System : "Confirm return"
+System --> User : "Return confirmation"
+
+note right of (UC5)
+This use case involves the return of books and updating their availability in the system.
+end note
+
+@enduml

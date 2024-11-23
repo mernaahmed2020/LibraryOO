@@ -1,0 +1,17 @@
+@startuml
+
+:User: as User
+:System: as System
+
+(Register User) as (UC1)
+
+User --> (UC1) : "Enter user details"
+(UC1) --> System : "Save user information"
+System --> User : "Confirmation message"
+
+note right of (UC1)
+This use case involves the registration of a new user by entering their details.
+end note
+
+@enduml
+

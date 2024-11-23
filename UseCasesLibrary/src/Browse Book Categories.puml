@@ -1,0 +1,19 @@
+@startuml
+
+:User: as User
+:System: as System
+:Database: as Database
+
+(Browse Book Categories) as (UC3)
+
+User --> (UC3) : "Browse categories"
+(UC3) --> System : "Show categories"
+System --> Database : "Fetch categories"
+Database --> System : "Return categories"
+System --> User : "Display categories"
+
+note right of (UC3)
+This use case allows the user to browse book categories and view the available options.
+end note
+
+@enduml
