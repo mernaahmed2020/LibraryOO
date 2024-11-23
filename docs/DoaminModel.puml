@@ -1,5 +1,4 @@
 @startuml
-' Define classes with detailed attributes
 class User {
     +userId
     +name
@@ -43,16 +42,15 @@ class LibraryAnnouncements {
     +datePosted
 }
 
-' Define relationships with cardinality and role names
-User "1" -- "0..*" BorrowingTransaction : borrows
+User "1" -- "0*" BorrowingTransaction : borrows
 BorrowingTransaction "1" -- "1" Book : involves
 Book "1" -- "1" BorrowingTransaction : currentTransaction
-User "1" -- "0..*" Book : searches/browses
-User "1" -- "0..*" LibraryAnnouncements : views
+User "1" -- "0*" Book : searches/browses
+User "1" -- "0*" LibraryAnnouncements : views
 
-' Administrator relationships
-Administrator "1" -- "0..*" LibraryAnnouncements : manages
-Administrator "1" -- "0..*" Book : adds/removes/updates
-Administrator "1" -- "0..*" BorrowingTransaction : oversees
+
+Administrator "1" -- "0*" LibraryAnnouncements : manages
+Administrator "1" -- "0*" Book : adds/removes/updates
+Administrator "1" -- "0*" BorrowingTransaction : oversees
 
 @enduml
