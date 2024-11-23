@@ -15,18 +15,18 @@ By replacing outdated methods with an intuitive digital solution, the LMS aims t
 ## **Functional Requirements**
 The system will include the following core functionalities:
 
-    1. **User Registration**: Allow users to register for library access, creating unique profiles with secure credentials.
-    2. **Book Search and Browsing**: Enable users to search for books by title, author, genre, or ISBN and browse the catalog.
-    3. **Borrowing Books**: Allow users to borrow books, updating availability status in real time.
-    4. **Returning Books**: Facilitate book returns, including notifications for overdue books and late fees.
-    5. **View Borrowing History**: Let users review their borrowing history, including current and past transactions.
-    6. **Library Announcements**: Provide administrators with a platform to post announcements visible to all users.
+    1. User Registration: Allow users to register for library access, creating unique profiles with secure credentials.
+    2. Book Search and Browsing: Enable users to search for books by title, author, genre, or ISBN and browse the catalog.
+    3. Borrowing Books: Allow users to borrow books, updating availability status in real time.
+    4. Returning Books: Facilitate book returns, including notifications for overdue books and late fees.
+    5. View Borrowing History: Let users review their borrowing history, including current and past transactions.
+    6. Library Announcements: Provide administrators with a platform to post announcements visible to all users.
 
 ## **Non-Functional Requirements**
-    1. **Data Storage**: Use a robust database to persistently store library member and book data.
-    2. **Performance**: Ensure all operations, such as book searches and transactions, complete within 3 seconds.
-    3. **Scalability**: Support up to 50 concurrent users accessing the system without performance degradation.
-    4. **Usability**: Deliver a clean, user-friendly interface accessible to users with varying technical expertise.
-    5. **Security**: Protect user credentials and sensitive data with encryption and secure authentication methods.
+    1. Data Storage: Use a robust database to persistently store library member and book data.
+    2. Performance: Ensure all operations, such as book searches and transactions, complete within 3 seconds.
+    3. Scalability: Support up to 50 concurrent users accessing the system without performance degradation.
+    4. Usability: Deliver a clean, user-friendly interface accessible to users with varying technical expertise.
+    5. Security: Protect user credentials and sensitive data with encryption and secure authentication methods.
 
 
