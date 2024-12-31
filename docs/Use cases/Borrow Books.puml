@@ -1,16 +1,16 @@
 @startuml
 
 :User: as User
-:System: as System
 
 (Borrow Books) as (UC4)
 
 User --> (UC4) : "Select books to borrow"
-(UC4) --> System : "Check availability"
-System --> User : "Confirm borrow"
+(UC4) --> (UC4) : "Check availability"
+(UC4) --> User : "Confirm borrow"
 
 note right of (UC4)
 This use case allows the user to borrow books after confirming their availability.
 end note
 
 @enduml
+
