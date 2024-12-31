@@ -2,7 +2,6 @@
 top to bottom direction
 
 actor User
-actor Database
 
 rectangle "Library Management System" {
     usecase "Borrow Books" as UC1
@@ -13,8 +12,6 @@ rectangle "Library Management System" {
 User --> UC1
 UC1 --> UC2
 UC2 --> UC3
-UC2 --> Database : "Request Book Availability"
-Database --> UC2 : "Return Availability Status"
 
 note right of UC1
 This use case allows the user to borrow books

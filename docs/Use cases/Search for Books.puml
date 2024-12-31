@@ -1,7 +1,6 @@
 @startuml
 
 actor User
-actor Database
 
 rectangle "Library Management System" {
     usecase "Search for Books" as UC2
@@ -10,8 +9,7 @@ rectangle "Library Management System" {
 
 User --> UC2 : "Enter search query"
 UC2 --> UC3 : "Query book database"
-UC3 --> Database : "Execute query"
-Database --> UC3 : "Return book results"
+UC3 --> UC3 : "Execute query"
 UC3 --> User : "Display book results"
 
 note right of UC2

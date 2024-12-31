@@ -1,7 +1,6 @@
 @startuml
 
 actor User
-actor Database
 
 rectangle "Library Management System" {
     usecase "Return Books" as UC5
@@ -13,7 +12,7 @@ rectangle "Library Management System" {
 User --> UC5 : "Return borrowed books"
 UC5 --> UC6 : "Process return"
 UC6 --> UC7 : "Update book status"
-UC7 --> Database : "Update availability"
+UC7 --> UC7 : "Update availability"
 UC7 --> UC8 : "Send confirmation"
 UC8 --> User : "Return confirmation"
 
