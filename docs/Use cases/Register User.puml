@@ -1,7 +1,5 @@
 @startuml
-
 actor User
-actor Database
 
 rectangle "Library Management System" {
     usecase "Register User" as UC1
@@ -12,10 +10,9 @@ rectangle "Library Management System" {
 
 User --> UC1
 UC1 --> UC2 : "Enter user details"
-UC2 --> Database : "Check if user exists"
-Database --> UC2 : "Return validation status"
+UC2 --> UC2 : "Check if user exists"
 UC2 --> UC3 : "Save valid user information"
-UC3 --> Database : "Store user data"
+UC3 --> UC3 : "Store user data"
 UC3 --> UC4 : "Send confirmation message"
 UC4 --> User : "Confirmation message"
 
@@ -24,3 +21,4 @@ This use case involves the registration of a new user.
 end note
 
 @enduml
+
