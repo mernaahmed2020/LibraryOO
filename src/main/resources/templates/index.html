@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Welcome to My Awesome Library</title>
+</head>
+<body>
+<h1>Welcome to the Library!</h1>
+<p>This is the homepage of My Awesome Library</p>
+
+<h2>Available Books:</h2>
+<div th:each="book : ${books}">
+    <div>
+        <h3 th:text="${book.title}"></h3>
+        <p th:text="${book.author}"></p>
+        <p th:text="${book.genre}"></p>
+    </div>
+</div>
+</body>
+</html>
