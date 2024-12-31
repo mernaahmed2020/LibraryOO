@@ -1,0 +1,39 @@
+@startuml
+
+' UI Layer (Presentation Layer)
+package "UI Layer" {
+  [LoginPage]
+  [BookListPage]
+}
+
+' Business Logic Layer (Application Layer)
+package "Business Logic Layer" {
+  [UserService]
+  [BookService]
+}
+
+' Data Access Layer (Persistence Layer)
+package "Data Access Layer" {
+  [UserRepository]
+  [BookRepository]
+}
+
+' Domain Layer
+package "Domain Layer" {
+  [Book]
+  [User]
+  [Loan]
+}
+
+' Relationships between Layers
+[LoginPage] --> [UserService] : "calls"
+[BookListPage] --> [BookService] : "calls"
+[UserService] --> [UserRepository] : "uses"
+[BookService] --> [BookRepository] : "uses"
+
+[BookService] --> [Book] : "manages"
+[UserService] --> [User] : "authenticates"
+[Loan] --> [Book] : "references"
+[Loan] --> [User] : "references"
+
+@enduml

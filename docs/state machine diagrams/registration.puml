@@ -1,0 +1,49 @@
+@startuml
+skinparam backgroundColor #EEEBDC
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+}
+
+[*] --> LOGIN : Start
+
+state LOGIN {
+  LOGIN : User chooses to log in or register
+}
+state REGISTRATION {
+  REGISTRATION : User enters registration details
+}
+state HOME {
+  HOME : Main screen for navigation
+}
+state SEARCH {
+  SEARCH : User searches or browses books
+}
+state BORROW {
+  BORROW : User borrows a book
+}
+state RETURN {
+  RETURN : User returns a borrowed book
+}
+state HISTORY {
+  HISTORY : User views borrowing history
+}
+state ANNOUNCEMENTS {
+  ANNOUNCEMENTS : User views library announcements
+}
+
+LOGIN --> REGISTRATION : register
+LOGIN --> HOME : login successful
+REGISTRATION --> HOME : registration successful
+HOME --> SEARCH : search books
+HOME --> BORROW : borrow books
+HOME --> RETURN : return books
+HOME --> HISTORY : view history
+HOME --> ANNOUNCEMENTS : view announcements
+
+SEARCH --> HOME : back
+BORROW --> HOME : back
+RETURN --> HOME : back
+HISTORY --> HOME : back
+ANNOUNCEMENTS --> HOME : back
+@enduml

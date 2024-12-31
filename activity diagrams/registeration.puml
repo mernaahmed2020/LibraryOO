@@ -1,0 +1,13 @@
+@startuml
+start
+:Fill Registration Form;
+:Validate Input Data;
+if (Is Data Valid?) then (Yes)
+    :Save User Details in Database;
+    :Send Confirmation Email;
+else (No)
+    :Display Error;
+    :Allow User to Refill Form;
+endif
+stop
+@enduml

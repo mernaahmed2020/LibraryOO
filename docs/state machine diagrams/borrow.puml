@@ -1,0 +1,14 @@
+@startuml
+skinparam backgroundColor #EEEBDC
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+}
+
+state BORROW {
+  BORROW : User borrows a book
+}
+
+BORROW --> HOME : back
+
+@enduml

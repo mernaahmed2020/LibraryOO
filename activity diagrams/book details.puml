@@ -1,0 +1,11 @@
+@startuml
+start
+:Enter Book Details;
+:Search in Database;
+if (Book Found?) then (Yes)
+    :Display Book Details;
+else (No)
+    :Display "Book Not Found" Message;
+endif
+stop
+@enduml

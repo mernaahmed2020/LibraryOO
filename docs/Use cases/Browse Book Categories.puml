@@ -2,7 +2,6 @@
 top to bottom direction
 
 actor User
-actor Database
 
 rectangle "Library Management System" {
     usecase "Browse Book Categories" as UC3
@@ -11,8 +10,7 @@ rectangle "Library Management System" {
 
 User --> UC3 : "Browse categories"
 UC3 --> UC4 : "Request categories"
-UC4 --> Database : "Fetch categories from DB"
-Database --> UC4 : "Return categories"
+UC4 --> UC4 : "Return categories"
 UC4 --> User : "Display categories"
 
 note right of UC3

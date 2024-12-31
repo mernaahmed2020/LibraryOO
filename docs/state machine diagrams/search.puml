@@ -1,0 +1,14 @@
+@startuml
+skinparam backgroundColor #EEEBDC
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+}
+
+state SEARCH {
+  SEARCH : User searches or browses books
+}
+
+SEARCH --> HOME : back
+
+@enduml

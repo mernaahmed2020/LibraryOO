@@ -1,0 +1,22 @@
+@startuml
+skinparam backgroundColor #EEEBDC
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+}
+
+[*] --> LOGIN : Start
+
+state LOGIN {
+  LOGIN : User chooses to log in or register
+}
+
+state REGISTRATION {
+  REGISTRATION : User enters registration details
+}
+
+LOGIN --> REGISTRATION : register
+LOGIN --> HOME : login successful
+REGISTRATION --> HOME : registration successful
+
+@enduml

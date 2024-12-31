@@ -1,0 +1,40 @@
+@startuml
+|User|
+start
+:Fill Registration Form;
+:Validate Input Data;
+if (Is Data Valid?) then (Yes)
+    :Save User Details;
+    :Send Confirmation Email;
+else (No)
+    :Display Error;
+    :Allow User to Refill Form;
+endif
+
+|User|
+:Search for Book;
+:Check Book Availability;
+if (Book Available?) then (Yes)
+    :Borrow Book;
+    :Update Inventory;
+else (No)
+    :Notify User (Out of Stock);
+endif
+
+|User|
+:Return Book;
+:Check if Book is Overdue;
+if (Is Overdue?) then (Yes)
+    :Calculate Fine;
+    :Notify User;
+else (No)
+    :Mark Book as Returned;
+endif
+:Update Inventory;
+:View Borrowing History;
+
+|Admin|
+:Post Library Announcement;
+:Notify Users of New Announcement;
+stop
+@enduml

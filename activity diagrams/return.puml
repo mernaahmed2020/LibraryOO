@@ -1,0 +1,13 @@
+@startuml
+start
+:Enter Book Details;
+:Check Return Date;
+if (Is Return Late?) then (Yes)
+    :Calculate Fine;
+    :Notify User;
+else (No)
+    :Mark Book as Returned;
+endif
+:Update Inventory;
+stop
+@enduml

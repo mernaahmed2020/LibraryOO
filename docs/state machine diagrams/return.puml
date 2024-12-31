@@ -1,0 +1,13 @@
+@startuml
+skinparam backgroundColor #EEEBDC
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+}
+
+state RETURN {
+  RETURN : User returns a borrowed book
+}
+
+RETURN --> HOME : back
+@enduml

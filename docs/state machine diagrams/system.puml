@@ -1,0 +1,18 @@
+@startuml
+skinparam backgroundColor #EEEBDC
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+}
+
+state HOME {
+  HOME : Main screen for navigation
+}
+
+HOME --> SEARCH : search books
+HOME --> BORROW : borrow books
+HOME --> RETURN : return books
+HOME --> HISTORY : view history
+HOME --> ANNOUNCEMENTS : view announcements
+
+@enduml

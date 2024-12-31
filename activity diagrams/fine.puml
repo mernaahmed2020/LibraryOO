@@ -1,0 +1,12 @@
+@startuml
+start
+:Calculate Outstanding Fine;
+:Choose Payment Method;
+if (Payment Successful?) then (Yes)
+    :Update Fine Status in Database;
+    :Notify User;
+else (No)
+    :Retry Payment;
+endif
+stop
+@enduml
