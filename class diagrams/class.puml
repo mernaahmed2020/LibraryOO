@@ -1,0 +1,53 @@
+@startuml
+
+class User {
+    +username: String
+    +password: String
+    +name: String
+    +email: String
+    +borrowingHistory: List<Transaction>
+    +borrowBook(book: Book): void
+    +returnBook(book: Book): void
+    +readAnnouncement(announcement: Announcement): void
+}
+
+class Admin {
+    +username: String
+    +name: String
+    +makeAnnouncement(title: String, text: String): void
+    +addBook(book: Book): void
+    +deleteBook(book: Book): void
+}
+
+class Book {
+    +bookID: String
+    +title: String
+    +author: String
+    +genre: String
+    +isBorrowed: Boolean
+}
+
+class Transaction {
+    +type: String // borrow or return
+    +creationDate: Date
+    +user: User
+    +book: Book
+}
+
+class Announcement {
+    +title: String
+    +text: String
+    +creationDate: Date
+}
+
+User "1" --> "0..*" Transaction: borrowingHistory
+User "0..*" --> "1..*" Book: borrows/returns
+User "0..*" --> "0..*" Announcement: reads
+
+Admin "1" --> "0..*" Announcement: makes
+Admin "1" --> "0..*" Book: adds/deletes
+
+Transaction "1" --> "1" Book: relatesTo
+Transaction "1" --> "1" User: performedBy
+
+@enduml
