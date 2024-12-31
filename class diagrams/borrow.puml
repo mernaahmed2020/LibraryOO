@@ -1,0 +1,46 @@
+@startuml
+class User {
+  +username: String
+  +password: String
+  +name: String
+  +email: String
+  +borrowingHistory: String
+  +borrowBook()
+  +returnBook()
+  +readAnnouncement()
+  +createTransaction()
+}
+
+class Book {
+  +bookID: String
+  +title: String
+  +author: String
+  +genre: String
+  +getDetails()
+}
+
+class Transaction {
+  +creationDate: Date
+  +type: String
+  +executeTransaction()
+}
+
+class Announcement {
+  +title: String
+  +text: String
+  +creationDate: Date
+  +displayAnnouncement()
+}
+
+class Admin {
+  +username: String
+  +name: String
+  +makeAnnouncement()
+}
+
+User "1" -- "many" Book : borrows/returns
+User "1" -- "many" Transaction : creates
+User "1" -- "many" Announcement : reads
+Admin "1" -- "many" Announcement : makes
+
+@enduml
